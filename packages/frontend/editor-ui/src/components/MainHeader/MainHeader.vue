@@ -83,12 +83,7 @@ const workflowId = computed(() =>
 );
 const onWorkflowPage = computed(() => !!(route.meta.nodeView || route.meta.keepWorkflowAlive));
 const readOnly = computed(() => sourceControlStore.preferences.branchReadOnly);
-const isEnterprise = computed(
-	() => settingsStore.isQueueModeEnabled && settingsStore.isWorkerViewAvailable,
-);
-const showGitHubButton = computed(
-	() => !isEnterprise.value && !settingsStore.settings.inE2ETests && !githubButtonHidden.value,
-);
+const showGitHubButton = computed(() => false);
 
 const parentFolderForBreadcrumbs = computed<FolderShortInfo | undefined>(() => {
 	if (!workflow.value.parentFolder) {

@@ -25,4 +25,8 @@ export class LicenseConfig {
 	/** Ephemeral license certificate. See: https://github.com/n8n-io/license-management?tab=readme-ov-file#concept-ephemeral-entitlements */
 	@Env('N8N_LICENSE_CERT')
 	cert: string = '';
+
+	/** Bypass all license checks */
+	@Env('N8N_BYPASS_LICENSE')
+	bypassLicense: boolean = true;
 }
